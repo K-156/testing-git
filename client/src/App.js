@@ -1,9 +1,10 @@
-
+import Landing from "./pages/Landing";
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <h1>Jobify</h1>
+      <Landing />
     </div>
   );
 }
