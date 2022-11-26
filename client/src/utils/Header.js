@@ -3,15 +3,7 @@ import styled from "styled-components";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
-  let status = "show";
-
-  useEffect(() => {
-    if (sidebar) {
-      status = "show";
-    } else {
-      status = "";
-    }
-  }, [sidebar]);
+  
 
   return (
     <>
@@ -42,25 +34,26 @@ const Header = () => {
             </li>
           </ul>
         </div>
-
-        <aside class="sidebar" id="sidebar">
-          <div>
-            <ul class="sidebar-links">
-              <li>
-                <a href="index.html">home</a>
-              </li>
-              <li>
-                <a href="about.html">about</a>
-              </li>
-              <li>
-                <a href="projects.html">projects</a>
-              </li>
-              <li>
-                <a href="contact.html">contact</a>
-              </li>
-            </ul>
-          </div>
-        </aside>
+        {sidebar && (
+          <aside class="sidebar" id="sidebar">
+            <div>
+              <ul class="sidebar-links">
+                <li>
+                  <a href="index.html">home</a>
+                </li>
+                <li>
+                  <a href="about.html">about</a>
+                </li>
+                <li>
+                  <a href="projects.html">projects</a>
+                </li>
+                <li>
+                  <a href="contact.html">contact</a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        )}
       </StyledHeader>
     </>
   );
@@ -103,10 +96,12 @@ const StyledHeader = styled.nav`
   }
 
   @media screen and (min-width: 768px) {
+
     .nav {
       background: var(--clr-primary-10);
     }
-    .nav-btn {
+    .nav-btn,
+    .sidebar {
       display: none;
     }
     .nav-links {
