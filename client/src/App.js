@@ -1,5 +1,5 @@
 import Landing from "./pages/Landing";
-import Navbar from "./utils/Navbar";
+import Navbar from "./utils/Header";
 
 function App() {
   return (
