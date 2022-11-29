@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
-  
 
   return (
     <>
@@ -85,6 +84,7 @@ const StyledHeader = styled.nav`
     -webkit-box-align: center;
     align-items: center;
     padding-top: 1rem;
+    margin-left: 1rem;
   }
   .nav-btn {
     background: transparent;
@@ -95,8 +95,19 @@ const StyledHeader = styled.nav`
     justify-self: right;
   }
 
-  @media screen and (min-width: 768px) {
+  .sidebar {
+    width: var(--fluid-width);
+    margin: 0 auto;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+  }
 
+  .sidebar-links a {
+    color: var(--clr-primary-5);
+  }
+
+  @media screen and (min-width: 768px) {
     .nav {
       background: var(--clr-primary-10);
     }
